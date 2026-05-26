@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anjini Pandey - Resume</title>
+    <style>
+        /* CSS Reset & Print Basics */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #f4f7f6;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            line-height: 1.5;
+        }
+        
+        /* Main Wrapper */
+        .resume-wrapper {
+            max-width: 850px;
+            margin: 40px auto;
+            background: #ffffff;
+            padding: 50px 60px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Header Section */
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+        }
+        .name {
+            font-size: 36px;
+            font-weight: 700;
+            color: #2c3e50;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            font-size: 14px;
+            font-weight: 600;
+            color: #555;
+            margin-bottom: 10px;
+        }
+        .contact-info {
+            font-size: 13px;
+            color: #555;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .contact-info a {
+            color: #2980b9;
+            text-decoration: none;
+        }
+
+        /* Section Headings */
+        .section-heading {
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #2c3e50;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            margin-top: 25px;
+            page-break-after: avoid;
+        }
+
+        /* General Text Styles */
+        p.summary {
+            font-size: 13.5px;
+            text-align: justify;
+            color: #444;
+        }
+
+        /* Block Styles (Experience, Education, Projects) */
+        .block {
+            margin-bottom: 15px;
+            page-break-inside: avoid;
+        }
+        .block-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+        .block-title {
+            font-size: 14.5px;
+            font-weight: 700;
+            color: #000;
+        }
+        .block-date {
+            font-size: 13px;
+            font-weight: 600;
+            color: #555;
+        }
+        .block-subtitle {
+            font-size: 13.5px;
+            font-weight: 600;
+            font-style: italic;
+            color: #444;
+            margin-bottom: 8px;
+        }
+
+        /* Bullet Lists */
+        .bullet-list {
+            list-style: none;
+            margin-left: 0;
+            font-size: 13.5px;
+            color: #444;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .bullet-list li {
+            position: relative;
+            padding-left: 15px;
+        }
+        .bullet-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #2c3e50;
+            font-weight: bold;
+        }
+
+        /* Tables (Certifications & Skills) */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+            font-size: 13.5px;
+            page-break-inside: avoid;
+        }
+        th, td {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+            vertical-align: top;
+        }
+        th {
+            background-color: #f9f9f9;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+        td a.cert-link, a.cert-link {
+            color: #2980b9;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        td a.cert-link:hover, a.cert-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Technical Skills Table Specifics */
+        .skills-table td:first-child {
+            font-weight: 700;
+            width: 20%;
+            background-color: #f9f9f9;
+            color: #2c3e50;
+        }
+
+        /* Print Optimization */
+        @media print {
+            body { background-color: #fff; }
+            .resume-wrapper {
+                margin: 0;
+                padding: 0;
+                box-shadow: none;
+                max-width: 100%;
+                width: 100%;
+            }
+            @page { margin: 15mm; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="resume-wrapper">
+        
+        <div class="header">
+            <h1 class="name">Anjini Pandey</h1>
+            <div class="subtitle">B.Tech Computer Science & Engineering | VIT Vellore</div>
+            <div class="contact-info">
+                <span>📞 +91 9958474205</span>
+                <span>✉️ <a href="mailto:anjinipandey71@gmail.com">anjinipandey71@gmail.com</a></span>
+                <span>📍 Faridabad, Haryana, India</span>
+                <span>🌐 <a href="https://jini0703.github.io/portfolio/" target="_blank">Portfolio</a></span>
+                <span>🔗 <a href="https://www.linkedin.com/in/anjini-pandey-76a479319/" target="_blank">LinkedIn</a></span>
+                <span>💻 <a href="https://github.com/jini0703" target="_blank">GitHub</a></span>
+            </div>
+        </div>
+
+        <h2 class="section-heading">Professional Summary</h2>
+        <p class="summary">
+            Motivated B.Tech Computer Science student at VIT Vellore with knowledge of web development, cloud computing (AWS & Oracle OCI), and generative AI. Skilled in Python, JavaScript, SQL, and Java through coursework, certifications, and projects. Strong problem-solving, teamwork, and communication skills with a keen interest in gaining hands-on experience through internship opportunities.
+        </p>
+
+        <h2 class="section-heading">Education</h2>
+        
+        <div class="block">
+            <div class="block-header">
+                <span class="block-title">B.Tech Computer Science & Engineering</span>
+                <span class="block-date">2024 - 2028</span>
+            </div>
+            <div class="block-subtitle">Vellore Institute of Technology (VIT), Vellore</div>
+            <ul class="bullet-list">
+                <li>Relevant coursework: Data Structures & Algorithms, Theory of Computation, Computer Architecture</li>
+                <li>Studied Spanish as an additional language</li>
+            </ul>
+        </div>
+
+        <div class="block" style="margin-bottom: 0;">
+            <div class="block-header">
+                <span class="block-title">High School (PCM + Computer Science)</span>
+                <span class="block-date">Graduated 2024</span>
+            </div>
+            <div class="block-subtitle">Delhi Public School Greater Faridabad, Sector 81</div>
+        </div>
+
+        <h2 class="section-heading">Technical Projects</h2>
+        
+        <div class="block">
+            <div class="block-header">
+                <span class="block-title">Roommate Finder Web Application</span>
+                <span class="block-date">Jan 2026</span>
+            </div>
+            <div class="block-subtitle">Full-Stack Web Development Project</div>
+            <ul class="bullet-list">
+                <li>Built an interactive platform to help college students find compatible roommates based on preferences and lifestyle criteria.</li>
+                <li>Designed and implemented the entire frontend architecture using HTML, CSS, and JavaScript, delivering a seamless, responsive user experience.</li>
+                <li>Collaborated with team members on feature design and iterative UI/UX improvements, applying agile development practices.</li>
+                <li>Deployed the live application; <a href="https://jini0703.github.io/all-tasks-project/group%20project/index.html" target="_blank" class="cert-link">View Live Project ↗</a></li>
+            </ul>
+        </div>
+
+        <h2 class="section-heading">Certifications</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Certification</th>
+                    <th>Issuing Body</th>
+                    <th>Date</th>
+                    <th>Link</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>AWS Certified Cloud Practitioner (CLF-C02)</td>
+                    <td>AWS Training & Certification</td>
+                    <td>May 2026</td>
+                    <td><a href="https://drive.google.com/file/d/1JckMJHxKjGdKJ22bVjIUUTEKYjwTVgbR/preview" target="_blank" class="cert-link">View ↗</a></td>
+                </tr>
+                <tr>
+                    <td>AWS Cloud Practitioner Essentials</td>
+                    <td>AWS Training & Certification</td>
+                    <td>May 2026</td>
+                    <td><a href="https://drive.google.com/file/d/19kaKdouYiPSLp00ljn8716_HW7BxbO0A/preview" target="_blank" class="cert-link">View ↗</a></td>
+                </tr>
+                <tr>
+                    <td>AWS Technical Essentials</td>
+                    <td>AWS Training & Certification</td>
+                    <td>May 2026</td>
+                    <td><a href="https://drive.google.com/file/d/1uaGQJrquk27VjzRtdsBkVxDoghC-5WQ7/preview" target="_blank" class="cert-link">View ↗</a></td>
+                </tr>
+                <tr>
+                    <td>AWS Academy: Generative AI Foundations (12 hrs)</td>
+                    <td>AWS Academy</td>
+                    <td>May 2026</td>
+                    <td><a href="https://drive.google.com/file/d/1CeTIbuE4dhv18fqQAgqTf3Jh4UjjYKXF/preview" target="_blank" class="cert-link">View ↗</a></td>
+                </tr>
+                <tr>
+                    <td>OCI 2025 Certified Generative AI Professional</td>
+                    <td>Oracle University</td>
+                    <td>May 2026</td>
+                    <td><a href="https://drive.google.com/file/d/1G82QlCQBemn1brxuSzc42fiCGT7evboF/preview" target="_blank" class="cert-link">View ↗</a></td>
+                </tr>
+                <tr>
+                    <td>OCI 2025 Certified AI Foundations Associate</td>
+                    <td>Oracle University</td>
+                    <td>May 2026</td>
+                    <td><a href="https://drive.google.com/file/d/1apE-tNuP4-TQnEtbBJY8J4MLftd-p4OJ/preview" target="_blank" class="cert-link">View ↗</a></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 class="section-heading">Leadership & Experience</h2>
+        
+        <div class="block">
+            <div class="block-header">
+                <span class="block-title">House Captain</span>
+                <span class="block-date">2022 - 2024</span>
+            </div>
+            <div class="block-subtitle">Delhi Public School Greater Faridabad</div>
+            <ul class="bullet-list">
+                <li>Led a house team of students, coordinating academic and extracurricular events throughout the school year.</li>
+                <li>Acted as the primary liaison between students and faculty, facilitating event planning, scheduling, and communications.</li>
+                <li>Strengthened conflict resolution and public speaking skills through regular inter-house competitions and assemblies.</li>
+            </ul>
+        </div>
+        
+        <div class="block">
+            <div class="block-header">
+                <span class="block-title">Data Analytics Job Simulation</span>
+                <span class="block-date">2025</span>
+            </div>
+            <div class="block-subtitle">Deloitte (via Forage)</div>
+            <ul class="bullet-list">
+                <li>Completed a virtual job simulation focused on data analysis and consulting-based problem solving.</li>
+                <li>Worked on interpreting datasets and deriving insights using analytical approaches.</li>
+                <li><a href="https://drive.google.com/file/d/1efHEH9KRo4bxq3R2rVBqMl1BjYjZH8Do/preview" target="_blank" class="cert-link">View Certificate ↗</a></li>
+            </ul>
+        </div>
+
+        <h2 class="section-heading">Technical Skills</h2>
+        <table class="skills-table">
+            <tbody>
+                <tr>
+                    <td>Languages</td>
+                    <td>Python, Java, C/C++, JavaScript, HTML/CSS, SQL</td>
+                </tr>
+                <tr>
+                    <td>Cloud & AI</td>
+                    <td>AWS Cloud, Oracle Cloud Infrastructure (OCI), Generative AI, Prompt Engineering</td>
+                </tr>
+                <tr>
+                    <td>Concepts</td>
+                    <td>Object-Oriented Programming (OOP), Database Management Systems (DBMS), Data Structures & Algorithms, Web Development</td>
+                </tr>
+                <tr>
+                    <td>Tools</td>
+                    <td>Git & GitHub, VS Code, Data Analytics Platforms</td>
+                </tr>
+                <tr>
+                    <td>Soft Skills</td>
+                    <td>Leadership, Team Collaboration, Cross-functional Communication, Event Management</td>
+                </tr>
+                <tr>
+                    <td>Spoken Languages</td>
+                    <td>English (Fluent), Hindi (Native), Spanish (Intermediate)</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</body>
+</html>
