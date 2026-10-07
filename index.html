@@ -1,398 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anjini Pandey - Resume</title>
-    <style>
-        /* CSS Reset & Print Basics */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            background-color: #f4f7f6;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #333;
-            line-height: 1.5;
-        }
-        
-        /* Main Wrapper */
-        .resume-wrapper {
-            max-width: 850px;
-            margin: 40px auto;
-            background: #ffffff;
-            padding: 50px 60px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anjini Pandey - Resume</title>
+<style>
+    :root {
+        --navy: #1f4e79;
+        --blue: #2e75b6;
+        --link: #2f6fb5;
+        --text: #222;
+        --muted: #666;
+        --zebra: #eef3fa;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+        background: #e9edf1;
+        font-family: Calibri, Carlito, "Segoe UI", Arial, sans-serif;
+        font-size: 13.5px;
+        line-height: 1.4;
+        color: var(--text);
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
-        /* Header Section */
-        .header {
-            text-align: center;
-            border-bottom: 2px solid #2c3e50;
-            padding-bottom: 20px;
-            margin-bottom: 25px;
-        }
-        .name {
-            font-size: 36px;
-            font-weight: 700;
-            color: #2c3e50;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-        }
-        .subtitle {
-            font-size: 14px;
-            font-weight: 600;
-            color: #555;
-            margin-bottom: 10px;
-        }
-        .contact-info {
-            font-size: 13px;
-            color: #555;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-        .contact-info a {
-            color: #2980b9;
-            text-decoration: none;
-        }
+    .page {
+        max-width: 794px;
+        margin: 24px auto;
+        background: #fff;
+        padding: 36px 44px 40px;
+        box-shadow: 0 2px 10px rgba(0,0,0,.15);
+    }
 
-        /* Section Headings */
-        .section-heading {
-            font-size: 16px;
-            font-weight: 700;
-            text-transform: uppercase;
-            color: #2c3e50;
-            border-bottom: 1px solid #ccc;
-            padding-bottom: 5px;
-            margin-bottom: 15px;
-            margin-top: 25px;
-            page-break-after: avoid;
-        }
+    /* Header */
+    .header { text-align: center; padding-bottom: 8px; border-bottom: 1px solid var(--blue); }
+    .name {
+        font-size: 31px;
+        font-weight: 700;
+        color: var(--navy);
+        letter-spacing: .5px;
+        text-transform: uppercase;
+        line-height: 1.2;
+    }
+    .subtitle { font-size: 14px; color: #444; margin: 2px 0 6px; }
+    .contact { font-size: 12px; color: #444; display: flex; justify-content: center; flex-wrap: wrap; gap: 0; }
+    .contact span { padding: 0 8px; border-left: 1px solid #bbb; }
+    .contact span:first-child { border-left: none; }
+    .contact .ico { margin-right: 3px; }
+    .contact a { color: var(--link); }
 
-        /* General Text Styles */
-        p.summary {
-            font-size: 13.5px;
-            text-align: justify;
-            color: #444;
-        }
+    /* Section headings */
+    h2 {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--navy);
+        text-transform: uppercase;
+        letter-spacing: .3px;
+        border-bottom: 1px solid var(--blue);
+        padding-bottom: 3px;
+        margin: 18px 0 8px;
+        break-after: avoid;
+    }
 
-        /* Block Styles (Experience, Education, Projects) */
-        .block {
-            margin-bottom: 15px;
-            page-break-inside: avoid;
-        }
-        .block-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 5px;
-        }
-        .block-title {
-            font-size: 14.5px;
-            font-weight: 700;
-            color: #000;
-        }
-        .block-date {
-            font-size: 13px;
-            font-weight: 600;
-            color: #555;
-        }
-        .block-subtitle {
-            font-size: 13.5px;
-            font-weight: 600;
-            font-style: italic;
-            color: #444;
-            margin-bottom: 8px;
-        }
+    .summary { text-align: left; }
 
-        /* Bullet Lists */
-        .bullet-list {
-            list-style: none;
-            margin-left: 0;
-            font-size: 13.5px;
-            color: #444;
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-        }
-        .bullet-list li {
-            position: relative;
-            padding-left: 15px;
-        }
-        .bullet-list li::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: #2c3e50;
-            font-weight: bold;
-        }
+    /* Entries */
+    .entry { margin-bottom: 11px; break-inside: avoid; }
+    .row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+    .title { font-weight: 700; font-size: 14px; color: #000; }
+    .date { font-style: italic; color: var(--muted); font-size: 12.5px; white-space: nowrap; padding-right: 60px; }
+    .sub { font-style: italic; color: var(--muted); font-size: 12.5px; }
+    .stack { font-style: italic; color: var(--blue); font-size: 12.5px; margin-bottom: 3px; }
 
-        /* Tables (Certifications & Skills) */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 15px;
-            font-size: 13.5px;
-            page-break-inside: avoid;
-        }
-        th, td {
-            padding: 8px 12px;
-            border: 1px solid #ddd;
-            text-align: left;
-            vertical-align: top;
-        }
-        th {
-            background-color: #f9f9f9;
-            font-weight: 700;
-            color: #2c3e50;
-        }
-        td a.cert-link, a.cert-link {
-            color: #2980b9;
-            text-decoration: none;
-            font-weight: 600;
-        }
-        td a.cert-link:hover, a.cert-link:hover {
-            text-decoration: underline;
-        }
+    ul { list-style: none; margin-top: 2px; }
+    li { position: relative; padding-left: 22px; margin-bottom: 2px; }
+    li::before { content: "•"; position: absolute; left: 6px; }
+    .live { display: block; margin-top: 1px; }
 
-        /* Technical Skills Table Specifics */
-        .skills-table td:first-child {
-            font-weight: 700;
-            width: 25%;
-            background-color: #f9f9f9;
-            color: #2c3e50;
-        }
+    /* Tables */
+    table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+    .cert th {
+        background: var(--navy);
+        color: #fff;
+        text-align: left;
+        font-weight: 700;
+        padding: 4px 6px;
+        border: 1px solid #fff;
+    }
+    .cert td { padding: 4px 6px; border: 1px solid var(--navy); }
+    .cert tbody tr:nth-child(even) td { background: var(--zebra); }
+    .cert tr { break-inside: avoid; }
 
-        /* Print Optimization */
-        @media print {
-            body { background-color: #fff; }
-            .resume-wrapper {
-                margin: 0;
-                padding: 0;
-                box-shadow: none;
-                max-width: 100%;
-                width: 100%;
-            }
-            @page { margin: 15mm; }
-        }
-    </style>
+    .skills { border: 1px solid var(--navy); }
+    .skills td { padding: 4px 6px; border-bottom: 1px solid #fff; vertical-align: top; }
+    .skills td:first-child {
+        width: 24%;
+        font-weight: 700;
+        color: var(--navy);
+        border-right: 1px solid var(--navy);
+    }
+    .skills tr:nth-child(even) td { background: var(--zebra); }
+
+    @media (max-width: 640px) {
+        .page { margin: 0; padding: 24px 16px; box-shadow: none; }
+        .name { font-size: 25px; }
+        .row { flex-direction: column; gap: 0; }
+        .date { padding-right: 0; }
+        .contact span { border-left: none; padding: 2px 6px; }
+        table { font-size: 12px; }
+    }
+
+    @media print {
+        body { background: #fff; }
+        .page { margin: 0; padding: 0; max-width: 100%; box-shadow: none; }
+        @page { size: A4; margin: 14mm 15mm; }
+        * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+</style>
 </head>
 <body>
+<div class="page">
 
-    <div class="resume-wrapper">
-        
-        <div class="header">
-            <h1 class="name">Anjini Pandey</h1>
-            <div class="subtitle">B.Tech Computer Science & Engineering | VIT Vellore</div>
-            <div class="contact-info">
-                <span>📞 +91 9958474205</span>
-                <span>✉️ <a href="mailto:anjinipandey71@gmail.com">anjinipandey71@gmail.com</a></span>
-                <span>📍 Faridabad, Haryana, India</span>
-                <span>🌐 <a href="https://portfolio-jini.vercel.app/" target="_blank">Portfolio</a></span>
-                <span>🔗 <a href="https://www.linkedin.com/in/anjini-pandey-76a479319/" target="_blank">LinkedIn</a></span>
-                <span>💻 <a href="https://github.com/jini0703" target="_blank">GitHub</a></span>
-            </div>
+    <header class="header">
+        <h1 class="name">Anjini Pandey</h1>
+        <div class="subtitle">B.Tech Computer Science &amp; Engineering | VIT Vellore</div>
+        <div class="contact">
+            <span><span class="ico">📞</span>+91 9958474205</span>
+            <span><span class="ico">✉️</span><a href="mailto:anjinipandey71@gmail.com">anjinipandey71@gmail.com</a></span>
+            <span><span class="ico">📍</span>Faridabad, Haryana, India</span>
+            <span><span class="ico">🌐</span><a href="https://portfolio-jini.vercel.app/" target="_blank" rel="noopener">Portfolio</a></span>
+            <span><span class="ico">🔗</span><a href="https://www.linkedin.com/in/anjini-pandey-76a479319/" target="_blank" rel="noopener">LinkedIn</a></span>
+            <span><span class="ico">💻</span><a href="https://github.com/jini0703" target="_blank" rel="noopener">GitHub</a></span>
         </div>
+    </header>
 
-        <h2 class="section-heading">Professional Summary</h2>
-        <p class="summary">
-            B.Tech Computer Science student at VIT Vellore with experience building full-stack applications using React, TypeScript, Java, Spring Boot, and Supabase, along with cloud computing (AWS & Oracle OCI) and generative AI. Skilled in Python, JavaScript, SQL, and Java through coursework, certifications, and projects. Strong problem-solving, teamwork, and communication skills.
-        </p>
+    <h2>Professional Summary</h2>
+    <p class="summary">B.Tech Computer Science student at VIT Vellore with experience building full-stack applications using React, TypeScript, Java, Spring Boot, and Supabase, along with cloud computing (AWS &amp; Oracle OCI) and generative AI. Skilled in Python, JavaScript, SQL, and Java through coursework, certifications, and projects. Strong problem-solving, teamwork, and communication skills.</p>
 
-        <h2 class="section-heading">Education</h2>
-        
-        <div class="block">
-            <div class="block-header">
-                <span class="block-title">B.Tech Computer Science & Engineering</span>
-                <span class="block-date">2024 - 2028</span>
-            </div>
-            <div class="block-subtitle">Vellore Institute of Technology (VIT), Vellore | CGPA: 8.38/10</div>
-            <ul class="bullet-list">
-                <li>Relevant coursework: Data Structures & Algorithms, Theory of Computation, Computer Architecture, Operating Systems, Computer Networks</li>
-                <li>Studied Spanish as an additional language</li>
-            </ul>
-        </div>
-
-        <div class="block" style="margin-bottom: 0;">
-            <div class="block-header">
-                <span class="block-title">High School (PCM + Computer Science)</span>
-                <span class="block-date">Graduated 2024</span>
-            </div>
-            <div class="block-subtitle">Delhi Public School Greater Faridabad, Sector 81</div>
-        </div>
-
-        <h2 class="section-heading">Technical Projects</h2>
-
-        <div class="block">
-            <div class="block-header">
-                <span class="block-title">AEROVAULT — Full-Stack Cloud Storage Platform</span>
-                <span class="block-date">2026</span>
-            </div>
-            <div class="block-subtitle">React 18 · Spring Boot 3 · Java 21 · PostgreSQL · AWS S3 · Docker</div>
-            <ul class="bullet-list">
-                <li>Architected and built a production-ready, Google Drive–style cloud storage platform featuring secure file upload, nested folder navigation, file sharing, a star/trash/restore lifecycle, and real-time dashboard analytics.</li>
-                <li>Engineered a secure REST API with Java 21 and Spring Boot 3, implementing stateless JWT authentication and role-based access control via Spring Security, with a custom CORS configuration for local and Vercel-deployed origins.</li>
-                <li>Integrated the AWS S3 SDK for scalable binary file storage, separating metadata persistence (PostgreSQL/Hibernate JPA) from file content delivery, and modeled relational schemas with soft-delete and many-to-many sharing logic.</li>
-                <li>Built a fully responsive, animated frontend with React 18, Tailwind CSS, React Query for server-state caching, and Framer Motion for premium transitions.</li>
-                <li>Deployed the frontend on Vercel and the backend on Render using Docker containerization with production-safe, environment-variable-driven configuration.</li>
-                <li><a href="#" target="_blank" class="cert-link">View Live Project ↗</a></li>
-            </ul>
-        </div>
-
-        <div class="block">
-            <div class="block-header">
-                <span class="block-title">CURO – AI-Powered Career Assistant</span>
-                <span class="block-date">2026</span>
-            </div>
-            <div class="block-subtitle">React, TypeScript, Supabase, TanStack Start, Vercel</div>
-            <ul class="bullet-list">
-                <li>Built a full-stack AI career platform using React, TypeScript, Supabase, and TanStack Start to assist users with career guidance, resume building, and interview preparation.</li>
-                <li>Implemented secure authentication and database management using Supabase.</li>
-                <li>Integrated AI APIs to generate personalized resume feedback and career recommendations based on user input.</li>
-                <li>Deployed and maintained the production build and environment configuration on Vercel.</li>
-                <li><a href="https://curo-five.vercel.app/" target="_blank" class="cert-link">View Live Project ↗</a></li>
-            </ul>
-        </div>
-        
-        <div class="block">
-            <div class="block-header">
-                <span class="block-title">Roommate Finder Web Application</span>
-                <span class="block-date">Jan 2026</span>
-            </div>
-            <div class="block-subtitle">Full-Stack Web Development Project</div>
-            <ul class="bullet-list">
-                <li>Built an interactive platform to help college students find compatible roommates based on preferences and lifestyle criteria.</li>
-                <li>Designed and implemented the entire frontend architecture using HTML, CSS, and JavaScript, delivering a seamless, responsive user experience.</li>
-                <li>Collaborated with team members on feature design and iterative UI/UX improvements, applying agile development practices.</li>
-                <li>Deployed the live application; <a href="https://jini0703.github.io/all-tasks-project/group%20project/index.html" target="_blank" class="cert-link">View Live Project ↗</a></li>
-            </ul>
-        </div>
-
-        <h2 class="section-heading">Certifications</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Certification</th>
-                    <th>Issuing Body</th>
-                    <th>Date</th>
-                    <th>Link</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>AWS Certified Cloud Practitioner (CLF-C02)</td>
-                    <td>AWS Training & Certification</td>
-                    <td>May 2026</td>
-                    <td><a href="https://drive.google.com/file/d/1JckMJHxKjGdKJ22bVjIUUTEKYjwTVgbR/preview" target="_blank" class="cert-link">View ↗</a></td>
-                </tr>
-                <tr>
-                    <td>AWS Cloud Practitioner Essentials</td>
-                    <td>AWS Training & Certification</td>
-                    <td>May 2026</td>
-                    <td><a href="https://drive.google.com/file/d/19kaKdouYiPSLp00ljn8716_HW7BxbO0A/preview" target="_blank" class="cert-link">View ↗</a></td>
-                </tr>
-                <tr>
-                    <td>AWS Technical Essentials</td>
-                    <td>AWS Training & Certification</td>
-                    <td>May 2026</td>
-                    <td><a href="https://drive.google.com/file/d/1uaGQJrquk27VjzRtdsBkVxDoghC-5WQ7/preview" target="_blank" class="cert-link">View ↗</a></td>
-                </tr>
-                <tr>
-                    <td>AWS Academy: Generative AI Foundations (12 hrs)</td>
-                    <td>AWS Academy</td>
-                    <td>May 2026</td>
-                    <td><a href="https://drive.google.com/file/d/1CeTIbuE4dhv18fqQAgqTf3Jh4UjjYKXF/preview" target="_blank" class="cert-link">View ↗</a></td>
-                </tr>
-                <tr>
-                    <td>OCI 2025 Certified Generative AI Professional</td>
-                    <td>Oracle University</td>
-                    <td>May 2026</td>
-                    <td><a href="https://drive.google.com/file/d/1G82QlCQBemn1brxuSzc42fiCGT7evboF/preview" target="_blank" class="cert-link">View ↗</a></td>
-                </tr>
-                <tr>
-                    <td>OCI 2025 Certified AI Foundations Associate</td>
-                    <td>Oracle University</td>
-                    <td>May 2026</td>
-                    <td><a href="https://drive.google.com/file/d/1apE-tNuP4-TQnEtbBJY8J4MLftd-p4OJ/preview" target="_blank" class="cert-link">View ↗</a></td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h2 class="section-heading">Leadership & Experience</h2>
-        
-        <div class="block">
-            <div class="block-header">
-                <span class="block-title">House Captain</span>
-                <span class="block-date">2022 - 2024</span>
-            </div>
-            <div class="block-subtitle">Delhi Public School Greater Faridabad</div>
-            <ul class="bullet-list">
-                <li>Led a house team of students, coordinating academic and extracurricular events throughout the school year.</li>
-                <li>Acted as the primary liaison between students and faculty, facilitating event planning, scheduling, and communications.</li>
-                <li>Strengthened conflict resolution and public speaking skills through regular inter-house competitions and assemblies.</li>
-            </ul>
-        </div>
-        
-        <div class="block">
-            <div class="block-header">
-                <span class="block-title">Data Analytics Job Simulation</span>
-                <span class="block-date">2025</span>
-            </div>
-            <div class="block-subtitle">Deloitte (via Forage)</div>
-            <ul class="bullet-list">
-                <li>Completed a virtual job simulation focused on data analysis and consulting-based problem solving.</li>
-                <li>Worked on interpreting datasets and deriving insights using analytical approaches.</li>
-                <li><a href="https://drive.google.com/file/d/1efHEH9KRo4bxq3R2rVBqMl1BjYjZH8Do/preview" target="_blank" class="cert-link">View Certificate ↗</a></li>
-            </ul>
-        </div>
-
-        <h2 class="section-heading">Technical Skills</h2>
-        <table class="skills-table">
-            <tbody>
-                <tr>
-                    <td>Languages</td>
-                    <td>Python, Java, C/C++, JavaScript, SQL, HTML/CSS</td>
-                </tr>
-                <tr>
-                    <td>Frameworks & Frontend</td>
-                    <td>React, TypeScript, TanStack Start, Tailwind CSS, Framer Motion</td>
-                </tr>
-                <tr>
-                    <td>Backend</td>
-                    <td>REST APIs, Spring Boot, Spring Security, Hibernate/JPA, Supabase</td>
-                </tr>
-                <tr>
-                    <td>Databases</td>
-                    <td>PostgreSQL, MySQL, SQL</td>
-                </tr>
-                <tr>
-                    <td>Cloud & AI</td>
-                    <td>AWS Cloud (S3, Cloud Practitioner), Oracle Cloud Infrastructure (OCI), Generative AI, Prompt Engineering</td>
-                </tr>
-                <tr>
-                    <td>Concepts</td>
-                    <td>Object-Oriented Programming (OOP), Database Management Systems (DBMS), Data Structures & Algorithms, Operating Systems, Computer Networks, Web Development</td>
-                </tr>
-                <tr>
-                    <td>Tools</td>
-                    <td>Git & GitHub, VS Code, Vercel, Render, Docker, Data Analytics Platforms</td>
-                </tr>
-                <tr>
-                    <td>Soft Skills</td>
-                    <td>Leadership, Team Collaboration, Cross-functional Communication, Event Management</td>
-                </tr>
-                <tr>
-                    <td>Spoken Languages</td>
-                    <td>English (Fluent), Hindi (Native), Spanish (Intermediate)</td>
-                </tr>
-            </tbody>
-        </table>
-
+    <h2>Education</h2>
+    <div class="entry">
+        <div class="row"><span class="title">B.Tech Computer Science &amp; Engineering</span><span class="date">2024 - 2028</span></div>
+        <div class="sub">Vellore Institute of Technology (VIT), Vellore | CGPA: 8.38/10</div>
     </div>
+    <div class="entry">
+        <div class="row"><span class="title">High School (PCM + Computer Science)</span><span class="date">Graduated 2024</span></div>
+        <div class="sub">Delhi Public School Greater Faridabad, Sector 81</div>
+    </div>
+
+    <h2>Technical Projects</h2>
+
+    <div class="entry">
+        <div class="row"><span class="title">AEROVAULT — Full-Stack Cloud Storage Platform</span><span class="date">2026</span></div>
+        <div class="stack">React 18 · Spring Boot 3 · Java 21 · PostgreSQL · AWS S3 · Docker</div>
+        <ul>
+            <li>Architected and built a production-ready, Google Drive–style cloud storage platform featuring secure file upload, nested folder navigation, file sharing, a star/trash/restore lifecycle, and real-time dashboard analytics.</li>
+            <li>Engineered a secure REST API with Java 21 and Spring Boot 3, implementing stateless JWT authentication and role-based access control via Spring Security, with a custom CORS configuration for local and Vercel-deployed origins.</li>
+            <li>Integrated the AWS S3 SDK for scalable binary file storage, separating metadata persistence (PostgreSQL/Hibernate JPA) from file content delivery, and modeled relational schemas with soft-delete and many-to-many sharing logic.</li>
+            <li>Built a fully responsive, animated frontend with React 18, Tailwind CSS, React Query for server-state caching, and Framer Motion for premium transitions.</li>
+            <li>Deployed the frontend on Vercel and the backend on Render using Docker containerization with production-safe, environment-variable-driven configuration.</li>
+        </ul>
+        <a class="live" href="#" target="_blank" rel="noopener">View Live Project ↗</a>
+    </div>
+
+    <div class="entry">
+        <div class="row"><span class="title">CURO – AI-Powered Career Assistant</span><span class="date">2026</span></div>
+        <div class="stack">React, TypeScript, Supabase, TanStack Start, Vercel</div>
+        <ul>
+            <li>Built a full-stack AI career platform using React, TypeScript, Supabase, and TanStack Start to assist users with career guidance, resume building, and interview preparation.</li>
+            <li>Implemented secure authentication and database management using Supabase.</li>
+            <li>Integrated AI APIs to generate personalized resume feedback and career recommendations based on user input.</li>
+            <li>Deployed and maintained the production build and environment configuration on Vercel.</li>
+        </ul>
+        <a class="live" href="https://curo-five.vercel.app/" target="_blank" rel="noopener">View Live Project ↗</a>
+    </div>
+
+    <div class="entry">
+        <div class="row"><span class="title">Roommate Finder Web Application</span><span class="date">Jan 2026</span></div>
+        <div class="stack">Full-Stack Web Development Project</div>
+        <ul>
+            <li>Built an interactive platform to help college students find compatible roommates based on preferences and lifestyle criteria.</li>
+            <li>Designed and implemented the entire frontend architecture using HTML, CSS, and JavaScript, delivering a seamless, responsive user experience.</li>
+            <li>Collaborated with team members on feature design and iterative UI/UX improvements, applying agile development practices.</li>
+        </ul>
+        <span class="live">Deployed the live application; <a href="https://jini0703.github.io/all-tasks-project/group%20project/index.html" target="_blank" rel="noopener">View Live Project ↗</a></span>
+    </div>
+
+    <h2>Certifications</h2>
+    <table class="cert">
+        <thead>
+            <tr><th style="width:42%">Certification</th><th style="width:30%">Issuing Body</th><th style="width:14%">Date</th><th>Link</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>AWS Certified Cloud Practitioner (CLF-C02)</td><td>AWS Training &amp; Certification</td><td>May 2026</td><td><a href="https://drive.google.com/file/d/1JckMJHxKjGdKJ22bVjIUUTEKYjwTVgbR/preview" target="_blank" rel="noopener">View ↗</a></td></tr>
+            <tr><td>AWS Cloud Practitioner Essentials</td><td>AWS Training &amp; Certification</td><td>May 2026</td><td><a href="https://drive.google.com/file/d/19kaKdouYiPSLp00ljn8716_HW7BxbO0A/preview" target="_blank" rel="noopener">View ↗</a></td></tr>
+            <tr><td>AWS Technical Essentials</td><td>AWS Training &amp; Certification</td><td>May 2026</td><td><a href="https://drive.google.com/file/d/1uaGQJrquk27VjzRtdsBkVxDoghC-5WQ7/preview" target="_blank" rel="noopener">View ↗</a></td></tr>
+            <tr><td>AWS Academy: Generative AI Foundations (12 hrs)</td><td>AWS Academy</td><td>May 2026</td><td><a href="https://drive.google.com/file/d/1CeTIbuE4dhv18fqQAgqTf3Jh4UjjYKXF/preview" target="_blank" rel="noopener">View ↗</a></td></tr>
+            <tr><td>OCI 2025 Certified Generative AI Professional</td><td>Oracle University</td><td>May 2026</td><td><a href="https://drive.google.com/file/d/1G82QlCQBemn1brxuSzc42fiCGT7evboF/preview" target="_blank" rel="noopener">View ↗</a></td></tr>
+            <tr><td>OCI 2025 Certified AI Foundations Associate</td><td>Oracle University</td><td>May 2026</td><td><a href="https://drive.google.com/file/d/1apE-tNuP4-TQnEtbBJY8J4MLftd-p4OJ/preview" target="_blank" rel="noopener">View ↗</a></td></tr>
+        </tbody>
+    </table>
+
+    <h2>Leadership &amp; Experience</h2>
+
+    <div class="entry">
+        <div class="row"><span class="title">House Captain</span><span class="date">2022 - 2024</span></div>
+        <div class="sub">Delhi Public School Greater Faridabad</div>
+        <ul>
+            <li>Led a house team of students, coordinating academic and extracurricular events throughout the school year.</li>
+            <li>Acted as the primary liaison between students and faculty, facilitating event planning, scheduling, and communications.</li>
+            <li>Strengthened conflict resolution and public speaking skills through regular inter-house competitions and assemblies.</li>
+        </ul>
+    </div>
+
+    <div class="entry">
+        <div class="row"><span class="title">Data Analytics Job Simulation</span><span class="date">2025</span></div>
+        <div class="sub">Deloitte (via Forage)</div>
+        <ul>
+            <li>Completed a virtual job simulation focused on data analysis and consulting-based problem solving.</li>
+            <li>Worked on interpreting datasets and deriving insights using analytical approaches.</li>
+        </ul>
+        <a class="live" href="https://drive.google.com/file/d/1efHEH9KRo4bxq3R2rVBqMl1BjYjZH8Do/preview" target="_blank" rel="noopener">View Certificate ↗</a>
+    </div>
+
+    <h2>Technical Skills</h2>
+    <table class="skills">
+        <tbody>
+            <tr><td>Languages</td><td>Python, Java, C/C++, JavaScript, SQL, HTML/CSS</td></tr>
+            <tr><td>Frameworks &amp; Frontend</td><td>React, TypeScript, TanStack Start, Tailwind CSS, Framer Motion</td></tr>
+            <tr><td>Backend</td><td>REST APIs, Spring Boot, Spring Security, Hibernate/JPA, Supabase</td></tr>
+            <tr><td>Databases</td><td>PostgreSQL, MySQL, SQL</td></tr>
+            <tr><td>Cloud &amp; AI</td><td>AWS Cloud (S3, Cloud Practitioner), Oracle Cloud Infrastructure (OCI), Generative AI, Prompt Engineering</td></tr>
+            <tr><td>Concepts</td><td>Object-Oriented Programming (OOP), Database Management Systems (DBMS), Data Structures &amp; Algorithms, Operating Systems, Computer Networks, Web Development</td></tr>
+            <tr><td>Tools</td><td>Git &amp; GitHub, VS Code, Vercel, Render, Docker, Data Analytics Platforms</td></tr>
+            <tr><td>Soft Skills</td><td>Leadership, Team Collaboration, Cross-functional Communication, Event Management</td></tr>
+            <tr><td>Spoken Languages</td><td>English (Fluent), Hindi (Native), Spanish (Intermediate)</td></tr>
+        </tbody>
+    </table>
+
+</div>
 </body>
 </html>
